@@ -224,7 +224,7 @@ The interface offers modes like camera view adjustments, full-screen mode, scree
 * __Target FPS (Vsync) Limit__: When `Set FPS Limit` is true, set the desired limit for the FPS (60, 90, or 120)
 * __Autoplay Sequence Interval__:  Switch the interval between the auto-generate sensor input from changing. 
 
-## Using the MakeFile
+## Using the MakeFile/Dockerfile
 
 ### Building the server-app docker image:
 Download cuda toolkit 9.2 from the link bellow, and place the /usr/local/cuda-9.2 in server/cuda-9.2 first
