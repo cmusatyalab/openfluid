@@ -1,3 +1,5 @@
+The following is the original documentation from [NVIDIAGameWorks/FleX](https://github.com/NVIDIAGameWorks/FleX). The information might not be relevant to the openfluid project anymore. Please see the Acknowledgements section for copyright details.
+
 NVIDIA Flex - 1.2.0
 ===================
 

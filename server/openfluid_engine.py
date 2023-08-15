@@ -272,8 +272,9 @@ class OpenfluidEngine(cognitive_engine.Engine):
                 extras.style_list[k] = v
             self.sendStyle = False
 
-        
+        # Update for latency Measurement
         extras.latency_token = self.latency_token
+        # Update for simulation fps
         extras.fps = self.server_fps
             
         status = gabriel_pb2.ResultWrapper.Status.SUCCESS

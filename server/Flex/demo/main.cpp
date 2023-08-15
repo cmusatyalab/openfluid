@@ -25,6 +25,8 @@
 //
 // Copyright (c) 2013-2020 NVIDIA Corporation. All rights reserved.
 
+// Modified the orginal code by Jinho Yi (jinhoy@andrew.cmu.edu)
+
 #include "../core/types.h"
 #include "../core/maths.h"
 #include "../core/platform.h"

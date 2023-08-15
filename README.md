@@ -17,8 +17,7 @@ This is a developing project.
 Unless otherwise stated, all source code and documentation are under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 A copy of this license is reproduced in the [LICENSE](LICENSE) file.
 
-!!UPDATE!!
-Portions from the following third party sources have been modified and are included in this repository. These portions are noted in the source files and are copyright their respective authors with the licenses listed. (Update Flex src, licence File)
+Parts of this repository include modified content from third-party sources. Files located in `server/FleX` are copyrighted by their respective authors and are subject to the licenses mentioned. Please refer to `server/FleX/README.md` for any additional copyright information for the codes used in the third-party source.
 
 Project | Modified | License
 ---|---|---|
@@ -106,9 +105,9 @@ sudo apt-get -y install cuda-drivers
 sudo reboot
 ``` -->
 
-## Compilation from Source
+## Compiling the Source Code
 
-### Option A. Docker Environment
+### Option A. Using Docker Environment
 We've provided a Docker image equipped with all necessary dependencies, enabling you to compile and run the server directly from the source within the given environment. 
 
 #### A.1 Fetch the Docker Image
@@ -278,7 +277,7 @@ make docker-env-git-run [username]
 
 The Extras proto is defined in `android-client/app/src/main/proto/openfluid.proto` and `server/Flex/demo/proto`.
 
-As you make changes to this proto, make sure they are identical. After making changes, it will be recompiled for the android client the next time you start the Android client from Android Studio. Do following command in /server directory to recompile proto file for the server. 
+As you make changes to this proto, make sure they are identical. After making changes, it will be recompiled for the android client the next time you start the Android client from Android Studio. Do following command in `/server` directory to recompile proto file for the server. 
 ```
 make protoc 
 ```
