@@ -1,0 +1,14 @@
+version: '1.0'
+services:
+  openfluid:
+    image: cmusatyalab/openfluid:${OPENRTIST_TAG}
+    ports:
+      - "9099:9099"
+    devices:
+      - "/dev/dri:/dev/dri"
+    restart: unless-stopped
+
+    # for NVIDIA GPUs
+    # gpus: all     # not yet supported by docker-compose
+    runtime: nvidia
+    privileged: true

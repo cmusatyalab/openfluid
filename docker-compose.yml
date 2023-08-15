@@ -1,0 +1,10 @@
+version: '1.0'
+services:
+  openrfluid:
+    image: cmusatyalab/openfluid:dev
+    build: .
+    ports:
+      - "9099:9099"
+    devices:
+      - "/dev/dri:/dev/dri"
+    restart: unless-stopped

@@ -1,0 +1,4 @@
+gabriel-server==2.1.1
+asyncio==3.4.3
+protobuf==3.20.3
+pyzmq

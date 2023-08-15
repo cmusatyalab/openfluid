@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://stackoverflow.com/questions/3024983/how-do-i-change-the-tint-of-an-imagebutton-on-focus-press -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State when a row is being pressed, but hasn't yet been activated (finger down) -->
+<!--    <item android:state_pressed="true" android:color="@color/cardview_dark_background"/>-->
+    <item android:state_pressed="true" android:color="@color/carnegie_igrey"/>
+
+    <!-- When the view is "activated".  In SINGLE_CHOICE_MODE, it flags the active row
+     of a ListView -->
+<!--    <item android:state_activated="true" android:color="@color/cardview_dark_background"/>-->
+    <item android:state_activated="true" android:color="@color/carnegie_igrey"/>
+
+    <!-- Default, "just hangin' out" state. -->
+<!--    <item android:color="#FFFFFF"/>-->
+    <item android:color="#FFFFFF"/>
+</selector>

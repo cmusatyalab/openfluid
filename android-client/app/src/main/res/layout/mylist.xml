@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/cardview_dark_background"
+    android:drawableTint="@color/card_background"
+    android:fontFamily="@font/rubik_light"
+    android:padding="4dp"
+    android:text="Medium Text"
+    android:textAlignment="center"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textColor="@color/textColorPrimary"
+    app:drawableLeftCompat="@drawable/baseline_arrow_right_24" />
+
+
+

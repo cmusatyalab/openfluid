@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">OpenFluid</string>
+    <string name="title_activity_main" translatable="false">OpenFluid</string>
+    <string name="subtitle" translatable="false">Real-Time Fluid Simulation</string>
+
+    <!-- activity_serverlist.xml -->
+    <string name="options_heading">Options</string>
+    <string name="stereo_option">Stereoscopic Effect (requires HUD)</string>
+    <string name="reference_option">Show Style Reference Image</string>
+    <string name="pref_title_recording">Show Screenshot/Recording Buttons</string>
+    <string name="show_fps">Set FPS Limit (Vsync)</string>
+    <string name="camera_option">Show Camera Toggling Button</string>
+    <string name="autoiterate_option">Iterate Styles Periodically</string>
+    <string name="serverlist_heading">Server List</string>
+    <string name="name_subheading">Name</string>
+    <string name="address_subheading">Address</string>
+    <string name="name_hint">Server Name</string>
+    <string name="address_hint" translatable="false">10.0.0.2[:9099]</string>
+    <string name="backend_instructions">OpenFluid requires a backend server to connect to. The cmu-demo-server can be used to test. You can setup your own backend server by following the instructions at https://github.com/cmusatyalab/openfluid to launch the cmusatyalab/openfluid Docker container.</string>
+    <string name="error_empty">Name and address are required.</string>
+    <string name="error_invalidURI">Server address is an invalid URI.</string>
+    <string name="error_exists">A server by that name already exists.</string>
+    <string name="server_removed">Removed server: </string>
+    <string name="server_kept">Server retained.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="server_delete_prompt">Are you sure you wish to delete this server?</string>
+    <string name="server_delete_title">Remove %s?</string>
+    <string name="server_add_hovertext">Add Server</string>
+    <string name="interval_set_toast">Interval set to %d seconds.</string>
+    <string name="interval_label">Delay (sec)</string>
+    <string name="recording_complete">Video snippet saved to %s!</string>
+    <string name="screenshot_taken">Screenshot saved to %s!</string>
+    <string name="iteration_started">Style iteration resumed.</string>
+    <string name="iteration_stopped">Style iteration paused.</string>
+
+    <string name="connecting_toast">Connecting to Gabriel server&#8230;</string>
+    <string name="connection_error">Connection Error</string>
+    <string name="could_not_connect">Could not connect</string>
+    <string name="server_disconnected">Server Disconnected</string>
+    <string name="server_error">Server Error</string>
+    <string name="toekn_error">Error Getting Token</string>
+    <string name="no_engine">Server is not running OpenRTiST</string>
+    <string name="unspecified_error">Unspecified Error</string>
+    <string name="back_button">Go Back</string>
+
+    <string name="demo_server">cmu-demo-server</string>  <!-- Need Update! -->
+    <string name="demo_dns">openfluid-demo.cmusatyalab.org</string> <!-- Need Update! -->
+
+    <string name="local_execution">Local</string>
+    <string name="local_execution_dns_placeholder">Run on Mobile Device (pytorch_android)</string>
+    <string name="dropdown_prompt">Select Style</string>
+
+    <string name="about_menu">About&#8230;</string>
+    <string name="settings_menu">Settings&#8230;</string>
+    <string name="tokenSize">Gabriel Token Size</string>
+    <string name="about_title" translatable="false">OpenFluid: Real-Time Fluid Simulation</string>
+    <string name="about_message" translatable="false">version: %s\nCopyright &#169; 2017-2020\nCarnegie Mellon University\nThis is a developing project.\n\nAll source code and documentation are under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)</string>
+    <string name="pref_header_ui">UI</string>
+    <string name="token_limit_summary">Controls how many frames can be in flight to Gabriel server</string>
+
+    <!-- Glass Launch-related strings. -->
+    <string name="start_gabriel_voice_trigger" translatable="false">Gabriel Assistant</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_token_limit">Gabriel Token Limit</string>
+    <string-array name="pref_token_list_titles">
+        <item>No limit</item>
+        <item>1 frame</item>
+        <item>2 frames</item>
+        <item>3 frames</item>
+        <item>4 frames</item>
+        <item>5 frames</item>
+    </string-array>
+    <string-array name="pref_token_list_values">
+        <item>None</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="pref_header_experimental">Experimental</string>
+
+    <string name="pref_title_resolution">Image Resolution</string>
+    <string-array name="pref_resolution_titles">
+        <item> 240p </item>
+        <item> 360p </item>
+        <item> 480p </item>
+        <item> 720p </item>
+        <item> 1080p </item>
+        <item> 1440p </item>
+        <item> 2160p </item>
+    </string-array>
+    <string-array name="pref_resolution_values">
+        <item>240</item>
+        <item>360</item>
+        <item>480</item>
+        <item>720</item>
+        <item>1080</item>
+        <item>1440</item>
+        <item>2160</item>
+    </string-array>
+
+    <string name="pref_title_iterate_interval">Autoplay Sequence Interval</string>
+    <string name="fps_0">FPS: 0</string>
+    <string name="loading">Loading Simulator… Please Wait</string>
+    <string-array name="pref_interval_list_titles">
+        <item>1 sec</item>
+        <item>2 sec</item>
+        <item>3 sec</item>
+        <item>5 sec</item>
+        <item>10 sec</item>
+    </string-array>
+    <string-array name="pref_interval_list_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="pref_title_FPS_LIST">Target FPS (Vsync) Limit</string>
+    <string-array name="fps_list_titles">
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+    </string-array>
+
+
+    <string name="help_cam">This is some helpful information for controlling cam</string>
+<!--    <string name="help_menu">This is some helpful information for controlling cam</string>-->
+
+    <string name="help_cma_pinch_zoom">Use pinch gestures to zoom in or out, moving the camera forwards or backwards.</string>
+    <string name="help_cma_drag_pan">Drag across the screen with one finger to move the camera up, down, left, or right.</string>
+    <string name="help_cam_360">Use the four arrow keys on the screen to adjust the camera angle.</string>
+    <string name="help_cam_360_2">Alternatively, drag across the screen with two fingers to rotate the camera.</string>
+    <string name="help_cam_center">Tap to re-center the camera.</string>
+    <string name="help_cam_ar">Tap to move the camera to predefined positions.</string>
+    <string name="help_cam_back">Tap to return to the main layout.</string>
+
+    <string name="help_info">Press \'Help\' in each layout for more specific guidance.</string>
+    <string name="help_menu">Tap to open a list of additional options.</string>
+    <string name="help_cam_mode">Tap to begin adjusting the camera position.</string>
+    <string name="help_fullscreen">Tap to switch to fullscreen mode. Tap again to exit this mode.</string>
+
+    <string name="help_menu_info">Tap to access the simulation benchmarks.</string>
+    <string name="help_menu_particle">Tap to switch between particle and fluid rendering modes.</string>
+    <string name="help_reset">Tap to reset the simulation.</string>
+    <string name="help_auto_play">Tap to toggle the auto-play mode. Note, no IMU sensor data will be collected in this mode.</string>
+    <string name="help_pause">Tap to pause or resume the simulation.</string>
+    <string name="help_scene">Tap to select from different scenes.</string>
+    <string name="help_rotation">Tap to switch between landscape and portrait screen modes.</string>
+
+
+
+
+</resources>

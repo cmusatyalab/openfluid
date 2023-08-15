@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package openfluid;
+
+option java_package = "edu.cmu.cs.openfluid";
+option java_outer_classname = "Protos";
+
+message Extras {
+    // From https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/wrappers.proto#L120
+    // TODO: Switch to google.protobuf.BytesValue once MobilEdgeX supports protobuf-javalite
+    message BytesValue {
+        // The bytes value.
+        bytes value = 1;
+    }
+
+    message IMUValue {
+        float x = 1;
+        float y = 2;
+        float z = 3;
+    }
+
+    message TouchInput {
+        float scale = 1;
+        float x = 2;
+        float y = 3;
+        bool doubleTouch = 4;
+    }
+
+    message ScreenValue {
+        float ratio = 1;
+        int32 resolution = 2;
+    }
+
+    message ArrowKey {
+        bool left = 1;
+        bool right = 2;
+        bool up = 3;
+        bool down = 4;
+    }
+    
+    message Setting {
+        int32 scene = 1;
+        bool align_center = 2;
+        bool ar_view = 3;
+        bool reset = 4;
+        bool pause = 5;
+        bool particle = 6;
+        bool info = 7;
+    }
+
+    map<string, string> style_list = 1;
+    IMUValue imu_value = 2;
+    ScreenValue screen_value = 3;
+    TouchInput touch_value = 4;
+    ArrowKey arrow_key = 5;
+    Setting setting_value = 6;
+    int32 latency_token = 7;
+    int32 fps = 8;
+}

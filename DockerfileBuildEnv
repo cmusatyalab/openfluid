@@ -1,0 +1,42 @@
+FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
+MAINTAINER Satyalab, satya-group@lists.andrew.cmu.edu
+LABEL org.opencontainers.image.source=https://github.com/cmusatyalab/openfluid
+LABEL org.opencontainers.image.description="OpenFluid: Real-Time Fluid Simulation - developing environment. For Nvidia driver version 535"
+LABEL org.opencontainers.image.licenses="Apache License, Version 2.0"
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+SHELL ["/bin/bash", "-c"]
+
+RUN apt-get update
+
+RUN apt-get -y install \
+    libzmq3-dev \
+    protobuf-compiler libprotobuf-dev \
+    libegl1-mesa-dev libgl1-mesa-dev \
+    freeglut3-dev \
+    libjpeg-dev \
+    software-properties-common
+
+# need to match the Server Driver version
+RUN apt-get -y install \
+    libnvidia-gl-535     
+    #libnvidia-gl-530
+    #libnvidia-gl-525
+    #libnvidia-gl-520
+    #libnvidia-gl-510
+    #libnvidia-gl-495
+    #libnvidia-gl-470
+    
+RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y \
+    python3.8 \
+    python3.8-dev \
+    python3-pip \
+ && apt-get install -y --reinstall python3.8-distutils \
+ && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+COPY ./server/requirements.txt server-requirements.txt
+
+RUN python3.8 -m pip install --upgrade pip \
+ && python3.8 -m pip install --no-cache-dir \
+    -r server-requirements.txt

@@ -1,0 +1,15 @@
+*.iml
+.gradle/
+.idea/
+.venv/
+.vscode/
+__pycache__/
+local.properties
+**/app/build/
+**/app/src/main/assets/
+server/Flex/demo/compiler/makelinux64/build/
+server/cuda-9.2/
+dist/
+android-client/java_pid8756.hprof
+android-client/app/standard/release/app-standard-release.apk
+Notes.txt

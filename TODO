@@ -1,0 +1,15 @@
+UPDATE README
+<!-- UPDATE LICENSE -->
+<!-- UPDATE PRIVACY_POLICY -->
+<!-- UPDATE CREDITS -->
+<!-- UPDATE docker-compose, server/docker-compose
+Add version descriptoin for the container image: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#labelling-container-images
+update LABEL for the the container -->
+
+UPDATE server/Flex/README
+(maybe) create docker image for nvidia-driver version 530, 525, 520, 510, 495, 470
+
+
+
+
+
