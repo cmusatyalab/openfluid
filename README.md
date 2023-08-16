@@ -105,6 +105,28 @@ sudo apt-get -y install cuda-drivers
 sudo reboot
 ``` -->
 
+## Running server on Microsoft Azure
+
+If you wish to compare between running the server on a cloudlet versus a cloud instance, you can launch the following VM from your Azure portal:
+
+__Size__ - Select NC4as_T4_v3
+
+__Image__ - NVIDIA GPU-Optimized VMI with vGPU driver
+
+__Network Setting__ - Make sure to open port `9099` in your Inbound port rules. This ensures that traffic from/to the mobile client will be directed to the server.
+
+__Extensions__ NvidiaGpuDriverLinux
+
+After successfully setting up the VM:
+
+1. Run the following command to update and downgrade the NVIDIA driver:
+```bash
+sudo apt-get update && apt-get install -y nvidia-driver-470-server
+```
+2. Proceed from step 4 of `Server Installation using Docker`. Note: Instead of using the version1.0 docker image as mentioned in previous steps, utilize the test-driver470 image. 
+
+
+
 ## Compiling the Source Code
 
 ### Option A. Using Docker Environment
@@ -166,8 +188,7 @@ sudo apt-get -y install \
 Match the OpenGL library version to your NVIDIA Driver (use `nvidia-smi` for version checking):
 
 ```bash
-sudo apt-get -y install \
-    libnvidia-gl-535  
+sudo apt-get -y install libnvidia-gl-535  
 ```
 
 A portion of the server is Python-based. __Ensure you use Python 3.8__
@@ -273,6 +294,7 @@ use docker-push with "env" for the version name
 make docker-env-git-run [username]  
 ```
 
+
 ## Protocol
 
 The Extras proto is defined in `android-client/app/src/main/proto/openfluid.proto` and `server/Flex/demo/proto`.
@@ -282,6 +304,36 @@ As you make changes to this proto, make sure they are identical. After making ch
 make protoc 
 ```
 
+## Troubleshooting
+### ERROR: eglGetDisplay() failed! eglGetError() = 0x3001
+If you encounter the error message above while running the server, follow the steps below based on the option you chose for server installation:
+
+### Option 1: Server Installation using Docker
+1. Downgrade the Nvidia driver. Instead of version 535, install version 470:
+
+```bash
+sudo apt-get update && apt-get install -y nvidia-driver-470
+```
+
+2. Use the docker image test-driver470:
+```bash
+docker pull ghcr.io/cmusatya/openfluid:test-driver470 
+```
+
+3. Run the docker container:
+``` bash
+docker run --gpus all --rm -it -p 9099:9099 ghcr.io/cmusatya/openfluid:version1.0
+```
+
+### Option 2: Compiling the Source Code in Local Environment
+With keeping everything else the same
+1. Instead of the latest Nvidia driver, install version 470.
+
+2. Match the OpenGL library version to your NVIDIA Driver:
+
+```bash 
+sudo apt-get -y install libnvidia-gl-470
+```
 
 ## Credits
 
