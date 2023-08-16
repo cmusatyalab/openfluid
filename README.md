@@ -25,7 +25,7 @@ Project | Modified | License
 
 ## Prerequisites
 
-OpenFluid server has been tested on __Ubuntu 22.04 LTS (Jammy Jellyfish)__ using several nVidia GPUs ( Quadro P1000, GTX 1080 Ti).
+OpenFluid server has been tested on __Ubuntu 22.04 LTS (Jammy Jellyfish)__ using several nVidia GPUs ( Quadro P1000, GTX 1080 Ti, Tesla V100).
 
 OpenFluid supports Android Client. We have tested the Android client on __Nexus 6__, __Samsung Galaxy Z Fold 4__, and __Essential PH-1__.
 
