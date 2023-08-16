@@ -47,7 +47,7 @@
     <string name="back_button">Go Back</string>
 
     <string name="demo_server">cmu-demo-server</string>  <!-- Need Update! -->
-    <string name="demo_dns">openfluid-demo.cmusatyalab.org</string> <!-- Need Update! -->
+    <string name="demo_dns">cloudlet024.elijah.cs.cmu.edu</string> <!-- Need Update! -->
 
     <string name="local_execution">Local</string>
     <string name="local_execution_dns_placeholder">Run on Mobile Device (pytorch_android)</string>
