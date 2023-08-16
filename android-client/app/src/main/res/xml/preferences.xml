@@ -68,7 +68,7 @@
         <ListPreference
             android:entries="@array/pref_interval_list_titles"
             android:entryValues="@array/pref_interval_list_values"
-            android:defaultValue="0"
+            android:defaultValue="2"
             android:key="general_iterate_delay"
             android:negativeButtonText="@null"
             android:positiveButtonText="@null"
