@@ -158,6 +158,20 @@
     <string name="help_pause">Tap to pause or resume the simulation.</string>
     <string name="help_scene">Tap to select from different scenes.</string>
     <string name="help_rotation">Tap to switch between landscape and portrait screen modes.</string>
+    <string name="find_cloudlets_menu">Find Cloudlets</string>
+    <string name="cloud_url">Cloud URL</string>
+    <string name="uuid_label">UUID</string>
+    <string name="title_activity_sinfonia">Sinfonia</string>
+    <string name="launch_text">Launch</string>
+    <string name="find_cloudlet_title">Find Cloudlet</string>
+    <string name="backend">Backend</string>
+    <string name="launch">Launch</string>
+    <string name="backend_name">Name</string>
+    <string name="processor_label">Processor</string>
+    <string name="version_label">Version</string>
+    <string name="resource_label">Resource</string>
+    <string name="launched">Launched</string>
+    <string name="cleanup_text">Cleanup</string>
 
 
 

@@ -40,6 +40,7 @@ import java.util.Map;
 
 import edu.cmu.cs.gabriel.Const;
 import edu.cmu.cs.gabriel.serverlist.ServerListFragment;
+import edu.cmu.cs.sinfonia.SinfoniaActivity;
 
 public class ServerListActivity extends AppCompatActivity {
       CameraManager camMan = null;
@@ -68,6 +69,7 @@ public class ServerListActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Intent intent;
         switch (id) {
             case R.id.about:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -78,10 +80,14 @@ public class ServerListActivity extends AppCompatActivity {
                 dialog.show();
                 return true;
             case R.id.settings:
-                Intent intent = new Intent(this, SettingsActivity.class);
+                intent = new Intent(this, SettingsActivity.class);
                 //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 //intent.putExtra("", faceTable);
                 this.startActivity(intent);
+                return true;
+            case R.id.find_cloudlets:
+                intent = new Intent(this, SinfoniaActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return false;
