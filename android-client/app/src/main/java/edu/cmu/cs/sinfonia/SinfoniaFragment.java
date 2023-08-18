@@ -79,7 +79,7 @@ public class SinfoniaFragment extends Fragment {
         if (savedInstanceState != null) {
             binding.setTier1url(savedInstanceState.getString(KEY_LOCAL_URL));
         } else {
-            binding.setTier1url("https://cmu.findcloudlet.org");
+            binding.setTier1url("http://vm039.elijah.cs.cmu.edu");
         }
         ArrayList<Backend> backends = new ArrayList<>();
         backends.add(new Backend(
