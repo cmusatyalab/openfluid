@@ -2,7 +2,7 @@
 # Makefile to build and run dockerfile
 #
 
-IMAGE_ID ?= 4e0065656dc2
+IMAGE_ID ?= 2176c3fa5aa1
 GITHUB_USRNAME ?= cmusatyalab
 VERSION ?= version1.0
 
@@ -31,7 +31,7 @@ all: process_args
 
 # docker-build [version] [username] 
 docker-build: process_args
-	sudo docker build -t $(GITHUB_USRNAME)/openfluid:$(VERSION) -f Dockerfile .
+	sudo docker build -t $(GITHUB_USRNAME)/openfluid:$(VERSION) -f server/Dockerfile .
 
 # docker-run [version] [username] 
 docker-run: process_args
@@ -59,7 +59,7 @@ docker-git-run: process_args
 
 # docker-env-build [username] 
 docker-env-build: process_args
-	sudo docker build -t $(GITHUB_USRNAME)/openfluid:env -f DockerfileBuildEnv .
+	sudo docker build -t $(GITHUB_USRNAME)/openfluid:env -f server/DockerfileBuildEnv .
 
 # docker-env-run [username] 
 docker-env-run: process_args
