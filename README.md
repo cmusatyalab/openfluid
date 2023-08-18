@@ -42,13 +42,13 @@ curl -fsSL get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
 
-### Step 2. Install NVIDIA CUDA drivers version 535
+### Step 2. Install NVIDIA CUDA drivers version 470
 
-Visit [the NVIDIA CUDA downloads page](https://developer.nvidia.com/cuda-downloads) to select your operating system and receive step-by-step installation guidance. __It is important that you get the version 535 for your driver.__
+Visit [the NVIDIA CUDA downloads page](https://www.nvidia.com/Download/Find.aspx?lang=en-us) to select your operating system and receive step-by-step installation guidance. __It is important that you get the version 470 for your driver.__
 
 For Debian-based Linux distributions, you can use the following command:
 ```bash
-sudo apt-get update && apt-get install -y nvidia-driver-535
+sudo apt-get update && apt-get install -y nvidia-driver-470
 ```
 
 To verify an existing NVIDIA driver installation, execute `nvidia-smi`. The installed driver version will be displayed at the top of the output.
@@ -94,7 +94,7 @@ __Ensure that port 9099 is open in your security group rules so that traffic to/
 
 Once the server is running in AWS, you can follow the steps above to setup the server.
 
-__Note__ : If using vanilla Ubuntu Server 16.04 Image, install the required Nvidia driver (version 535) and reboot.
+__Note__ : If using vanilla Ubuntu Server 16.04 Image, install the required Nvidia driver (version 470) and reboot.
 
 <!-- UPDATE::
 ```bash
@@ -188,7 +188,7 @@ sudo apt-get -y install \
 Match the OpenGL library version to your NVIDIA Driver (use `nvidia-smi` for version checking):
 
 ```bash
-sudo apt-get -y install libnvidia-gl-535  
+sudo apt-get -y install libnvidia-gl-470  
 ```
 
 A portion of the server is Python-based. __Ensure you use Python 3.8__
@@ -303,7 +303,7 @@ As you make changes to this proto, make sure they are identical. After making ch
 ```
 make protoc 
 ```
-
+<!-- 
 ## Troubleshooting
 ### ERROR: eglGetDisplay() failed! eglGetError() = 0x3001
 If you encounter the error message above while running the server, follow the steps below based on the option you chose for server installation:
@@ -332,8 +332,8 @@ With keeping everything else the same
 2. Match the OpenGL library version to your NVIDIA Driver:
 
 ```bash 
-sudo apt-get -y install libnvidia-gl-470
-```
+sudo apt-get -y install libnvidia-gl-470 -->
+<!-- ``` -->
 
 ## Credits
 

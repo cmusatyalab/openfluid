@@ -429,27 +429,27 @@ void ReshapeRender(int width, int height, bool minimized)
 		EGL_NONE,
 	};
 
-	static const int MAX_DEVICES = 4;
-	EGLDeviceEXT eglDevs[MAX_DEVICES];
-	EGLint numDevices;
+	// static const int MAX_DEVICES = 4;
+	// EGLDeviceEXT eglDevs[MAX_DEVICES];
+	// EGLint numDevices;
 
-	PFNEGLQUERYDEVICESEXTPROC eglQueryDevicesEXT =
-		(PFNEGLQUERYDEVICESEXTPROC)
-		eglGetProcAddress("eglQueryDevicesEXT");
+	// PFNEGLQUERYDEVICESEXTPROC eglQueryDevicesEXT =
+	// 	(PFNEGLQUERYDEVICESEXTPROC)
+	// 	eglGetProcAddress("eglQueryDevicesEXT");
 
-	eglQueryDevicesEXT(MAX_DEVICES, eglDevs, &numDevices);
+	// eglQueryDevicesEXT(MAX_DEVICES, eglDevs, &numDevices);
 
-	printf("Detected %d devices\n", numDevices);
+	// printf("Detected %d devices\n", numDevices);
 
-	PFNEGLGETPLATFORMDISPLAYEXTPROC eglGetPlatformDisplayEXT =
-		(PFNEGLGETPLATFORMDISPLAYEXTPROC)
-		eglGetProcAddress("eglGetPlatformDisplayEXT");
+	// PFNEGLGETPLATFORMDISPLAYEXTPROC eglGetPlatformDisplayEXT =
+	// 	(PFNEGLGETPLATFORMDISPLAYEXTPROC)
+	// 	eglGetProcAddress("eglGetPlatformDisplayEXT");
 
 
 
-	// eglDpy = eglGetDisplay(EGL_DEFAULT_DISPLAY);
-	eglDpy = eglGetPlatformDisplayEXT(EGL_PLATFORM_DEVICE_EXT, 
-                                    eglDevs[0], 0);
+	eglDpy = eglGetDisplay(EGL_DEFAULT_DISPLAY);
+	// eglDpy = eglGetPlatformDisplayEXT(EGL_PLATFORM_DEVICE_EXT, 
+    //                                 eglDevs[0], 0);
 	if (eglDpy == EGL_NO_DISPLAY) {
 		fprintf( stderr, "ERROR: eglGetDisplay() returned NULL!\n" );
 		exit(1);
