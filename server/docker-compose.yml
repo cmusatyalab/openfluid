@@ -1,14 +1,17 @@
 version: '1.0'
 services:
   openfluid:
-    image: cmusatyalab/openfluid:${OPENRTIST_TAG}
-    ports:
-      - "9099:9099"
+    image: ghcr.io/cmusatyalab/openfluid:test-driver470
+    # build: .
+    container_name: openfluid-server
+    privileged: true
     devices:
       - "/dev/dri:/dev/dri"
+    ports:
+      - "9099:9099"
     restart: unless-stopped
 
     # for NVIDIA GPUs
     # gpus: all     # not yet supported by docker-compose
     runtime: nvidia
-    privileged: true
+
