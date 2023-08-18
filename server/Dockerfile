@@ -31,7 +31,7 @@ RUN cd server && \
 ########################################################################################################################
 FROM nvidia/cuda:12.2.0-runtime-ubuntu22.04
 LABEL org.opencontainers.image.source=https://github.com/cmusatyalab/openfluid
-LABEL org.opencontainers.image.description="OpenFluid: Real-Time Fluid Simulation run file. For Nvidia driver version 535"
+LABEL org.opencontainers.image.description="OpenFluid: Real-Time Fluid Simulation run file. For Nvidia driver version 470"
 LABEL org.opencontainers.image.licenses="Apache License, Version 2.0"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -51,13 +51,13 @@ RUN apt-get -y install \
 
 # need to match the Server Driver version
 RUN apt-get -y install \
-    libnvidia-gl-535     
+    # libnvidia-gl-535     
     #libnvidia-gl-530
-    #libnvidia-gl-525
+    libnvidia-gl-525
     #libnvidia-gl-520
     #libnvidia-gl-510
     #libnvidia-gl-495
-    #libnvidia-gl-470
+    # libnvidia-gl-470
 
 # Python Server Requirement
 RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y \
