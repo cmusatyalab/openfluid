@@ -83,9 +83,9 @@ public class SinfoniaFragment extends Fragment {
         }
         ArrayList<Backend> backends = new ArrayList<>();
         backends.add(new Backend(
-                "Dummy",
-                "Intel CPU Core i9-12900",
-                "737b5001-d27a-413f-9806-abf9bfce6746",
+                "GPU",
+                "Nvidia GPU Core",
+                "5e750634-3df1-11ee-8734-f356cb333680",
                 "2.1"
         ));
         binding.setBackends(backends);
