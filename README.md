@@ -29,7 +29,7 @@ OpenFluid server has been tested on __Ubuntu 22.04 LTS (Jammy Jellyfish)__ using
 
 Based on our test, the most stable version (compatible with most of the Nvidia GPUs) is when you have:
 1. Ubuntu 22.04
-2. installed nvidia-driver-535
+2. installed nvidia-driver-535 (535.86.10)
 3. using docker version 'test-driver535'
 
 OpenFluid supports Android Client. We have tested the Android client on __Nexus 6__, __Samsung Galaxy Z Fold 4__, and __Essential PH-1__.
@@ -47,13 +47,13 @@ curl -fsSL get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
 
-### Step 2. Install NVIDIA CUDA drivers version 470
+### Step 2. Install NVIDIA CUDA drivers version 535
 
-Visit [the NVIDIA CUDA downloads page](https://www.nvidia.com/Download/Find.aspx?lang=en-us) to select your operating system and receive step-by-step installation guidance. __It is important that you get the version 470 for your driver.__
+Visit [the NVIDIA CUDA downloads page](https://www.nvidia.com/Download/Find.aspx?lang=en-us) to select your operating system and receive step-by-step installation guidance. __It is important that you get the version 535.86.10 for your driver.__
 
 For Debian-based Linux distributions, you can use the following command:
 ```bash
-sudo apt-get update && apt-get install -y nvidia-driver-470
+sudo apt-get update && apt-get install -y nvidia-driver-535
 ```
 
 To verify an existing NVIDIA driver installation, execute `nvidia-smi`. The installed driver version will be displayed at the top of the output.
@@ -168,7 +168,7 @@ Set up required libraries on your machine.
 #### B.1 Set Up CUDA
 OpenFluid employs the Flex SDK, a GPU-centric particle simulation library, which mandates the CUDA 9.2.148 toolkit for compilation. Download the [cuda toolkit 9.2](https://developer.nvidia.com/cuda-92-download-archive), and position the acquired `/usr/local/cuda-9.2` in `project_root/server/cuda-9.2`.
 
-For the CUDA runtime library and driver, consider the latest versions. Follow [NVIDIA's guidelines](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation). 
+For the CUDA runtime library and driver, visit [the NVIDIA CUDA downloads page](https://www.nvidia.com/Download/Find.aspx?lang=en-us) to select your operating system and receive step-by-step installation guidance. __It is important that you get the version 535.86.10 for your driver.__
 
 To verify your NVIDIA driver, use `nvidia-smi`. The driver version appears at the top of the resulting output.
 
@@ -193,7 +193,7 @@ sudo apt-get -y install \
 Match the OpenGL library version to your NVIDIA Driver (use `nvidia-smi` for version checking):
 
 ```bash
-sudo apt-get -y install libnvidia-gl-470  
+sudo apt-get -y install libnvidia-gl-535  
 ```
 
 A portion of the server is Python-based. __Ensure you use Python 3.8__
@@ -312,35 +312,34 @@ make protoc
 ## Troubleshooting
 ### ERROR: eglGetDisplay() failed! eglGetError() = 0x3001
 ### Flex: Could not open CUDA driver, ensure you have the latest driver (nvcuda.dll) installed and an NVIDIA GPU present on the system
-If you encounter the error message above while running the server, follow the steps below based on the option you chose for server installation:
+If you encounter the error message above while running the server, try following the steps below based on the option you chose for server installation:
 
 ### Option 1: Server Installation using Docker
-1. Install Nvidia-drive-535, instead of version 470:
+1. Install Nvidia-drive-470, instead of version 535:
 
-e.g. if you are using Ubuntu 22.04:
+e.g. if you are using Ubuntu:
 ```bash
-sudo apt-get update && apt-get install -y nvidia-driver-535
+sudo apt-get update && apt-get install -y nvidia-driver-470
 ```
-Note: nvidia-driver-535-server installs driver version < 535.86.10, which is not compatible with our docker image. 
 
-2. Use the docker image test-driver535:
+2. Use the docker image test-driver470:
 ```bash
-docker pull ghcr.io/cmusatya/openfluid:test-driver535
+docker pull ghcr.io/cmusatya/openfluid:test-driver470
 ```
 
 3. Run the docker container:
 ``` bash
-docker run --gpus all --rm -it -p 9099:9099 ghcr.io/cmusatya/openfluid:test-driver535
+docker run --gpus all --rm -it -p 9099:9099 ghcr.io/cmusatya/openfluid:test-driver70
 ```
 
 ### Option 2: Compiling the Source Code in Local Environment
 With keeping everything else the same
-1. install nvidia-driver version 535.86.10 (as described above)
+1. install nvidia-driver version 470 (as described above)
 
 2. Match the OpenGL library version to your NVIDIA Driver:
 
 ```bash 
-sudo apt-get -y install libnvidia-gl-535
+sudo apt-get -y install libnvidia-gl-470
 ```
 
 ## Credits
