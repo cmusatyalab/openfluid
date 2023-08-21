@@ -27,6 +27,11 @@ Project | Modified | License
 
 OpenFluid server has been tested on __Ubuntu 22.04 LTS (Jammy Jellyfish)__ using several nVidia GPUs ( Quadro P1000, GTX 1080 Ti, Tesla V100).
 
+Based on our test, the most stable version (compatible with most of the Nvidia GPUs) is when you have:
+1. Ubuntu 22.04
+2. installed nvidia-driver-535
+3. using docker version 'test-driver535'
+
 OpenFluid supports Android Client. We have tested the Android client on __Nexus 6__, __Samsung Galaxy Z Fold 4__, and __Essential PH-1__.
 
 ## Server Installation using Docker
@@ -303,37 +308,40 @@ As you make changes to this proto, make sure they are identical. After making ch
 ```
 make protoc 
 ```
-<!-- 
+
 ## Troubleshooting
 ### ERROR: eglGetDisplay() failed! eglGetError() = 0x3001
+### Flex: Could not open CUDA driver, ensure you have the latest driver (nvcuda.dll) installed and an NVIDIA GPU present on the system
 If you encounter the error message above while running the server, follow the steps below based on the option you chose for server installation:
 
 ### Option 1: Server Installation using Docker
-1. Downgrade the Nvidia driver. Instead of version 535, install version 470:
+1. Install Nvidia-drive-535, instead of version 470:
 
+e.g. if you are using Ubuntu 22.04:
 ```bash
-sudo apt-get update && apt-get install -y nvidia-driver-470
+sudo apt-get update && apt-get install -y nvidia-driver-535
 ```
+Note: nvidia-driver-535-server installs driver version < 535.86.10, which is not compatible with our docker image. 
 
-2. Use the docker image test-driver470:
+2. Use the docker image test-driver535:
 ```bash
-docker pull ghcr.io/cmusatya/openfluid:test-driver470 
+docker pull ghcr.io/cmusatya/openfluid:test-driver535
 ```
 
 3. Run the docker container:
 ``` bash
-docker run --gpus all --rm -it -p 9099:9099 ghcr.io/cmusatya/openfluid:version1.0
+docker run --gpus all --rm -it -p 9099:9099 ghcr.io/cmusatya/openfluid:test-driver535
 ```
 
 ### Option 2: Compiling the Source Code in Local Environment
 With keeping everything else the same
-1. Instead of the latest Nvidia driver, install version 470.
+1. install nvidia-driver version 535.86.10 (as described above)
 
 2. Match the OpenGL library version to your NVIDIA Driver:
 
 ```bash 
-sudo apt-get -y install libnvidia-gl-470 -->
-<!-- ``` -->
+sudo apt-get -y install libnvidia-gl-535
+```
 
 ## Credits
 
