@@ -12,7 +12,7 @@ image:
   repository: ghcr.io/cmusatyalab/openfluid
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: test-driver525
+  tag: test-driver535
 
 imagePullSecrets: []
 nameOverride: ""
