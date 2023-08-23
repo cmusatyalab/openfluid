@@ -51,13 +51,13 @@ RUN apt-get -y install \
 
 # need to match the Server Driver version
 RUN apt-get -y install \
-    # libnvidia-gl-535     
+    libnvidia-gl-535     
     #libnvidia-gl-530
-    libnvidia-gl-525
+    #libnvidia-gl-525
     #libnvidia-gl-520
     #libnvidia-gl-510
     #libnvidia-gl-495
-    # libnvidia-gl-470
+    #libnvidia-gl-470
 
 # Python Server Requirement
 RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y \
