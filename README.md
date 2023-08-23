@@ -250,8 +250,13 @@ The interface offers modes like camera view adjustments, full-screen mode, scree
 * __Autoplay Sequence Interval__:  Switch the interval between the auto-generate sensor input from changing. 
 
 ## Using the MakeFile/Dockerfile
+Ensure you saved your GitHub personal access toke (classic) into CR_PAT environment variable:
+```bash
+export CR_PAT=YOUR_TOKEN
+```
+Refer [Working with the Container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) for more information on how to use GitHub Container Registry.
 
-### Building the server-app docker image:
+### Building the server-app docker image
 Download cuda toolkit 9.2 from the link bellow, and place the /usr/local/cuda-9.2 in server/cuda-9.2 first
 https://developer.nvidia.com/cuda-92-download-archive
 ```
