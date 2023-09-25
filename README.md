@@ -7,8 +7,7 @@ OpenFluid utilizes Gabriel, a platform designed for wearable cognitive assistanc
 
 Demo on Samsung Galaxy Fold 4
 
-!!UPDATE!!
-Copyright &copy; 2017-2019 
+Copyright &copy; 2017-2023 
 Carnegie Mellon University
 
 This is a developing project.
