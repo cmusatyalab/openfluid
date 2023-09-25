@@ -2,7 +2,7 @@
 # Makefile to build and run dockerfile
 #
 
-IMAGE_ID ?= 2176c3fa5aa1
+IMAGE_ID ?= d9bfe722595e
 GITHUB_USRNAME ?= cmusatyalab
 VERSION ?= version1.0
 

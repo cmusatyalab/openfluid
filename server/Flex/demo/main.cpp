@@ -3302,7 +3302,7 @@ int main(int argc, char* argv[])
 	g_scenes.push_back(new DamBreak("DamBreak MedRes", 0.07f));
 	g_scenes.push_back(new DamBreak("DamBreak HighRes", 0.05f));
 	g_scenes.push_back(new DamBreak3("DamBreak Half-Full LowRes", 0.1f));
-	g_scenes.push_back(new DamBreak3("DamBreak Half-Full MedRes", 0.1f));
+	g_scenes.push_back(new DamBreak3("DamBreak Half-Full MedRes", 0.07f));
 
 	// viscous fluids
 	g_scenes.push_back(new DamBreak2("Viscosity Low", 0.1f));
